@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace Agent
+namespace Agents
 {
     public class SimpleAgentMover : MonoBehaviour
     {
+        public Vector3 AreaCenter;
+
         private NavMeshAgent _nMA;
 
         private void Awake()
@@ -32,8 +34,16 @@ namespace Agent
         private void SetNewDestination()
         {
             bool result;
-            result = _nMA.SetDestination(RandomPointOnNavMeshGetter.FindPoint());
+            result = _nMA.SetDestination(RandomPointOnNavMeshGetter.FindPointWithUnitSphere(AreaCenter));
             Debug.Log(result ? "OK" : "Setting point failed");
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Agent"))
+            {
+                Debug.Log("DUPA!");
+            }
         }
     } 
 }
