@@ -34,7 +34,8 @@ namespace Movement.Modifier
                         if (otherToThisValue > 0.0f)
                         {
                             Vector3 modifier = Vector3.Project(agent.velocity, otherToThis) * GlobalVariables.VELOCITY_FRACTION;
-                            modifiedVelocity = modifiedVelocity + (modifier * -1.0f);
+                            //modifiedVelocity = modifiedVelocity + (modifier * -1.0f);
+                            modifiedVelocity = modifiedVelocity + modifier;
                             changed = true;
                         } 
                     }

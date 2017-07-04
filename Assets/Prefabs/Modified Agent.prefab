@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 54294697147613426}
   - component: {fileID: 195404220235993110}
   - component: {fileID: 114683223772775560}
+  - component: {fileID: 114532139412232908}
   m_Layer: 0
   m_Name: Modified Agent
   m_TagString: Agent
@@ -182,6 +183,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f5b9e82784c8940a9ec2bc73eef3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114532139412232908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1393934454805268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704d183560534ab4eb7a2b6eef4af37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114683223772775560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2eaf0e883b62fb41aaca995d0a1dbcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartWithNoAvoidance: 1
+  _nextPoint: 0
+  _startingPoint: {x: 0, y: 0, z: 0}
+  _pathPoints: []
 --- !u!136 &136140095052185540
 CapsuleCollider:
   m_ObjectHideFlags: 1
